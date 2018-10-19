@@ -1,0 +1,14 @@
+file_roots:
+  base:
+    - /srv/salt
+pillar_roots:
+  base:
+    - /srv/pillar
+reactors:
+  - 'web/server/stopped':
+    - /srv/salt/web/server
+    - /srv/reactor/web/running
+  - 'web/server/disabled':
+    - /srv/reactor/web/disabled
+  - 'web/server/running':
+    - /srv/reactor/web/running

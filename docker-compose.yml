@@ -1,0 +1,14 @@
+version: '2.2'
+
+services: 
+  salt-master:
+    build:
+      context: .
+      dockerfile: Dockerfile.master
+  salt-minion:
+    build:
+      context: .
+      dockerfile: Dockerfile.minion
+    depends_on:
+      - salt-master
+    scale: 2

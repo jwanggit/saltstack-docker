@@ -1,0 +1,5 @@
+base:
+  '*':
+    - bigip
+  '*bigip*':
+    - bigip
